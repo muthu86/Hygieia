@@ -3,8 +3,26 @@ pipeline {
     stages { 
         stage('checkout') { 
             steps { 
-               echo "iam checked out"
+               checkout scm
             }
         }
+        stage('Build backend') {
+            steps {
+                
+               sh "mvn clean install"
+        }
+    }
+        
+        stage('NPM Build') {
+            
+            steps {
+            
+            dir('/Hygieia/UI') {
+             sh "npm install"   
+            }
+            }
+            
+        }
+        
     }
 }
