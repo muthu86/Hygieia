@@ -10,7 +10,7 @@ pipeline {
         stage('Build backend') {
             steps {
                 
-               bat "mvn clean install"
+               bat "mvn -pl '!UI' clean install"
         }
     }
         
