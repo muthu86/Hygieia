@@ -3,7 +3,8 @@ pipeline {
     stages { 
         stage('checkout') { 
             steps { 
-               checkout scm
+               //checkout scm
+                echo "check"
             }
         }
         stage('Build backend') {
