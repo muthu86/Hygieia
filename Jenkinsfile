@@ -10,7 +10,7 @@ pipeline {
         stage('Build backend') {
             steps {
                 
-               sh "mvn clean install"
+               bat "mvn clean install"
         }
     }
         
@@ -19,7 +19,7 @@ pipeline {
             steps {
             
             dir('/Hygieia/UI') {
-             sh "npm install"   
+             bat "npm install"   
             }
             }
             
